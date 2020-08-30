@@ -23,8 +23,19 @@ header {
     width: 100vw;
 }
 
-header nav {
+.menu {
+    display: none;
+}
+
+.drawer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
     flex-grow: 8;
+}
+
+header nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;

@@ -1,0 +1,142 @@
+@media screen and (max-width: 900px) {
+    .logo {
+        width: 100px;
+    }
+
+    header .drawer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: fixed;
+        top:0px;
+        left: 0px;
+        z-index: 110;
+        background-color: #efefef;
+        overflow-x: hidden;
+        height: 100vh;
+        overflow-y: scroll;
+        transition: 0.4s;
+        width: 0;
+    }
+
+    header .show-drawer {
+        width: 70vw;
+    }
+
+    header .drawer nav, header .drawer .actions {
+        flex-direction: column;
+    }
+
+    header .drawer .actions {
+        display: flex;
+    }
+
+    header .drawer .actions button {
+        width: 80%;
+        margin:16px ;
+    }
+
+    header .drawer nav a {
+        padding: 16px;
+    }
+
+
+    button.menu-button {
+        background-color: transparent;
+        color: #00758D;
+        font-size: 32px;
+    }
+
+    button.menu-button span {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        flex-grow: 20;
+    }
+
+    #home img {
+         display: none;
+     }
+
+     #home .text {
+         width: 100%;
+         text-align: center;
+     }
+
+     #home .text h1 {
+         font-size: 18px;
+     }
+
+     #home .text h2 {
+         font-size: 18px;
+         padding-top: 16px;
+     }
+
+     #apropos {
+         margin-top: 40px;
+         padding-top: 40px;
+     }
+
+     #apropos .proposition-valeurs {
+         grid-template-columns: 90%;
+     }
+
+     #apropos .proposition-valeurs article {
+         margin-bottom: 40px;
+     }
+
+     #users article {
+         flex-direction: column;
+         margin-bottom: 80px;
+         justify-content: center;
+         align-items: flex-end;
+         width: 100%;
+     }
+
+     #users article .content {
+         width: 100%;
+         padding: 20px;
+         align-items: center;
+         justify-content: center;
+         display: flex;
+         flex-direction: column;
+     }
+
+     #users article .content h1 {
+         font-size: 1.5em;
+         text-align: center;
+     }
+
+     #users article .content p {
+         padding-top: 16px;
+         padding-bottom: 16px;
+     }
+
+     #marketplace .marketplaces .card {
+         width: 80%;
+         margin-bottom: 40px;
+     }
+
+     footer .col-2 {
+         grid-template-columns: 100%;
+     }
+
+     footer .develop {
+         flex-direction: column;
+     }
+
+     footer .develop p {
+        font-weight: normal;
+        padding: 8px;
+     }
+
+     footer .develop a {
+         font-weight: normal;
+         padding: 8px;
+     }
+}
