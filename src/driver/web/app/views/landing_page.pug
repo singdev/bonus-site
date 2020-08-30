@@ -1,1 +1,135 @@
-h1 Hello World
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous")
+    link(rel="stylesheet" href="css/style.css")
+    link(rel="stylesheet" href="css/landin_site.css")
+
+  body
+    main
+      header
+        p.placeholder-logo BONUS
+        nav
+          a(href="#apropos") A propos
+          a(href="#users") Utilisateurs
+          a(href="#marketplace") Marketplace
+          a(href="#contact") Contact
+
+        .actions
+          button.plain-round-btn S'inscrire
+          button.outline-round-btn Se connecter
+
+      section#home
+        .text
+          h1 Bourse numérique de sous-traitance
+          h2 Donnez du Bonus à vos appels d'offres
+          p La bourse de sous traitance numérique (BONUS) est une plateforme d’intermediation et de qualification de prestataire et de fournisseurs de biens/services au niveau local
+
+        .illustration
+          .circle-img-cn
+            img(src="/img/chat.jpg" alt="Quelqu'un qui utilise BONUS")
+
+      section#apropos
+        p Bonus est une plateforme digitale fiable qui vous permet de gérer et d’exécuter vos marchés en toute confiance.
+
+        .proposition-valeurs
+          article
+            .icon
+              i(class="fas fa-graduation-cap")
+            .content
+              h2 Un système fiable pour la qualification des fournissseurs
+              p En plus de nos services de portage administratif,  Bonus  propose un algorithme de notation des prestataires se basant sur plusieurs critères alignés aux standards de chaque secteur et aux exigences  de votre cahier de charge.
+
+          article
+            .icon
+              i(class="fas fa-cash-register")
+            .content
+              h2 Un outil efficace pour faciliter les processus d’achat
+              p Bonus mets en place des marketplaces qui centralisent l’ensemble des mise en relation entre les donneurs d’ordre et les prestataires. En tant que tier de confiance, Bonus s’assure de la conformité des transactions et des parties prenantes dans le cadre de l’espace OHADA.
+
+          article
+            .icon
+              i(class="fas fa-chart-line")
+            .content
+              h2 Une innovation pour booster la croissance des PME
+              p La bourse numérique de sous-traitance vous aide à vous mettre en relation d’affaire avec des centaines de fournisseurs de services numériques et intellectuels. Avec son option en marque blanche, créer une bourse interne pour vos fournisseurs, sous-traitants et partenaires.
+
+      section#users
+        article
+          .illustration
+            .circle-img-cn
+              img(src="/img/chat.jpg" alt="Un donneur d'ordre")
+          .content
+            h1 Espace donneur d’ordre
+            p Vous êtes une administration, une grande entreprise, une PME/PMI ou un organisme international,
+            p Accédez à une base de données de professionnelles qualifiés et gérez efficacement vos appels d’offres.
+            button.color-1 Commencez à gérer vos appels d’offres
+
+        article
+          .illustration
+            .circle-img-cn
+              img(src="/img/ours.jpg" alt="Un prestataire")
+          .content
+            h1 Espace prestataires
+            p Vous êtes un fournisseur, une PME/PMI, une startup, un freelance ou vous exercez une profession libérale et vous êtes à la recherche de nouveaux marchés.
+            p Accédez à un grand volume de marché publique ou privé  en consultant les marketplaces de BONUS.
+            button.color-2 Commencez à postuler à des appels d’offfre
+
+      section#marketplace
+        p Grâce à ses
+          strong Marketplace
+          span , Bonus ambitionne de simplifier l’exécution des transactions commerciales sur les marchés africains et internationaux.
+
+        .marketplaces
+          .card
+            .card-content
+              p Des propositions de marché sont disponible pour les prestataires inscrits sur BONUS
+              p.divider-quad(class="color-3")
+              button.color-1 Accédez à la marketplace
+
+          .card
+            .card-content
+              p Les grandes entreprise peuvent créer leur propre marketplace personnalisé
+              p.divider-quad(class="color-3")
+              button.color-1 Accédez à la marketplace
+
+          .card
+            .card-content
+              p Les donneurs d’ordre peuvent publier leurs appels d’offre dans la marketplace de Bonus
+              p.divider-quad(class="color-3")
+              button.color-1 Accédez à la marketplace
+
+      footer#contact
+        h2 Pour plus d’information, n’hésitez pas à nous contacter
+        .col-2
+          h3 Nos Réseaux
+            .socials
+              .social
+                i(class="fab fa-facebook")
+                p Facebook
+              .social
+                i(class="fab fa-twitter")
+                p Twitter
+              .social
+                i(class="fab fa-instagram")
+                p Instagram
+
+          h3 Nos Coordonnées
+            .coordonnees
+              .coordonnee
+                i(class="far fa-envelope")
+                p
+                  a(href="mailto:contact@gobonus.ga") contact@gobonus.ga
+              .phone
+                i(class="fas fa-phone")
+                p +241 74 13 71 03
+              .adresse
+                i(class="fas fa-map-marker-alt")
+                p BP 2280, Rue Pecqueur Centre Ville, Libreville Gabon
+
+        .copyright
+          p &copy; Développer par
+            a(href="http://www.sing.ga") SING SA
+          a(href="#") Conditions générales d'utilisations
+          a(href="#") Politique de confidentialité
