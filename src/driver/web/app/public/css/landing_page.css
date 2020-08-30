@@ -1,0 +1,289 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Oxygen', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid #00758D;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100vw;
+}
+
+header nav {
+    flex-grow: 8;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+header nav a {
+    padding-right: 16px;
+    text-decoration: none;
+    color: #444444;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.4s;
+}
+
+header nav a:hover {
+    color: #cccccc;
+}
+
+header button {
+    margin-right: 16px;
+}
+
+#home {
+    width: 100%;
+    height: 90vh;
+    background: url(/img/blur.jpg);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    align-items: center;
+    padding-top: 80px;
+}
+
+#home img {
+    width: 30vw;
+    height: auto;
+}
+
+#home .text {
+    width: 40vw;
+}
+
+#home h1 {
+    text-transform: uppercase;
+    font-weight: lighter;
+}
+
+#home .text h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 2em;
+    padding-bottom: 32px;
+}
+
+#home .text p {
+    font-size: 14px;
+    color: #444444;
+    line-height: 1.7em;
+}
+
+#apropos {
+    margin-top: 80px;
+    padding-top: 100px;
+}
+
+.summury {
+    text-align: center;
+    padding: 20px;
+    color: #444444;
+}
+
+#apropos .proposition-valeurs {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+#apropos .proposition-valeurs .icon i {
+    font-size: 2em;
+    color: #00758D;
+}
+
+#apropos .proposition-valeurs .icon {
+    padding: 20px;
+}
+
+#apropos .proposition-valeurs article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#apropos .proposition-valeurs article h2 {
+    font-size: 14px;
+    font-weight: bold;
+    padding-bottom: 16px;
+}
+
+#apropos .proposition-valeurs article p {
+    font-size: 12px;
+    color: #777777;
+    line-height: 1.7em;
+}
+
+#users {
+    margin-top: 80px;
+    padding: 20px;
+    padding-top: 100px;
+    background-color: #efefef;
+}
+
+#users article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#users img {
+    width: 40vw;
+    height: auto;
+}
+
+#users article h1 {
+    color: #00303C;
+    font-size: 3em;
+    padding-bottom: 20px;
+}
+
+#users article .content {
+    width: 50vw;
+}
+
+#users article .content p {
+    padding-bottom: 20px;
+}
+
+#marketplace {
+    margin-top: 80px;
+    padding-top: 100px;
+}
+
+#marketplace .marketplaces {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 80px;
+}
+
+.card {
+    padding: 20px;
+    box-shadow: -1px -2px 10px #cccccc;
+}
+
+.divider-quad {
+    background-color: #D1B400;
+    width: 25%;
+    height: 4px;
+    margin-top: 20px;
+}
+
+#marketplace .marketplaces .card {
+    height: 50vh;
+    width: 25%;
+}
+
+#marketplace .marketplaces .card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#marketplace .marketplaces .card-content p {
+    color: #444444;
+    font-size: 14px;
+    line-height: 1.7em;
+}
+
+#marketplace .marketplaces .card-content .space {
+    flex-grow: 5;
+}
+
+footer {
+    background-color: #00303C;
+    padding: 20px;
+    padding-top: 80px;
+    margin-top: 80px;
+}
+
+footer h2 {
+    text-align: center;
+    font-size: 18px;
+    color: white;
+}
+
+.col-2 {
+    display: grid;
+    grid-template-columns: 30% 30%;
+    padding: 20px;
+    padding-top: 40px;
+    justify-content: center;
+}
+
+footer h3 {
+    color: #D1B400;
+    padding-top: 20px;
+    padding-bottom: 16px;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    padding-bottom: 32px;
+}
+
+.social i {
+    font-size: 30px;
+}
+
+.social p {
+    padding-left: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.social:hover p {
+    color: #777777;
+}
+
+
+.nos-coordonnees .coordonnees i {
+    font-size: 18px;
+}
+
+.develop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.develop p, .develop a {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.copyright {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #777777;
+}

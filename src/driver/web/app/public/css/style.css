@@ -1,0 +1,52 @@
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+.plain-round-btn {
+    border: none;
+    background-color: #00758D;
+    color: white;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-weight: bold;
+}
+
+.outline-round-btn {
+    border: 1px solid #00758D;
+    background-color: transparent;
+    color: #00758D;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+strong {
+    color: #8E0B56;
+    padding-left: 4px;
+}
+
+button {
+    padding: 16px 32px;
+    border-radius: 5px;
+    color: white;
+    background-color: #D1B400;
+    font-weight: bold;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.color-1 {
+    background-color: #8E0B56;
+}
+
+.color-2 {
+    background-color: #00758D;
+}
+
+.color-3 {
+    background-color: #D1B400;
+}
