@@ -1,0 +1,12 @@
+version: "2"
+services:
+    bonussite-app:
+        build: .
+        ports:
+            - "3041:8080"
+        links:
+            - bonussite
+    bonussite:
+        image: mongo
+        volumes:
+            - ./data:/data/db
