@@ -12,8 +12,8 @@ document.querySelector('.menu-button').addEventListener('click', (e) => {
     }
 })
 
-async function visite(action, next){
-    await fetch("/api/visite",{
+function visite(action, next){
+    fetch("/api/visite",{
         method: 'post',
         headers: {
             'content-type': 'application/json'
