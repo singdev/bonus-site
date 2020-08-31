@@ -11,3 +11,17 @@ document.querySelector('.menu-button').addEventListener('click', (e) => {
         document.querySelector('button.menu-button').querySelector('span').style.display = 'none';
     }
 })
+
+async function visite(action, next){
+    await fetch("/api/visite",{
+        method: 'post',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            action
+        })
+    });
+
+    window.location = next;
+}

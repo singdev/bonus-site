@@ -22,8 +22,8 @@ html
             a(href="#contact") Contact
 
           .actions
-            button.plain-round-btn(onclick="window.location ='#users'" style="width: 150px;") S'inscrire
-            button.outline-round-btn(onclick="window.location ='#users'" style="width: 150px;") Se connecter
+            button.plain-round-btn(onclick="visite('inscription','#users')" style="width: 150px;") S'inscrire
+            button.outline-round-btn(onclick="visite('connexion', '#users')" style="width: 150px;") Se connecter
         .menu
           button.menu-button
             span &times;
@@ -75,7 +75,7 @@ html
             p Vous êtes une administration, une grande entreprise, une PME/PMI ou un organisme international.
 
             p Accédez à une base de données de professionnelles qualifiés et gérez efficacement vos appels d’offres.
-            button.color-1(onclick="window.location ='/donneur-dordre'") Commencez à gérer vos appels d’offres
+            button.color-1(onclick="visite('donneur-dordre', '/donneur-dordre')") Commencez à gérer vos appels d’offres
 
         article
           .content
@@ -84,7 +84,7 @@ html
             p Vous êtes un fournisseur, une PME/PMI, une startup, un freelance ou vous exercez une profession libérale et vous êtes à la recherche de nouveaux marchés.
 
             p Accédez à un grand volume de marché publique ou privé  en consultant les marketplaces de BONUS.
-            button.color-3(onclick="window.location ='/prestataire'") Commencez à postuler à des appels d’offfre
+            button.color-3(onclick="visite('prestataire', '/prestataire')") Commencez à postuler à des appels d’offfre
 
           .illustration
             img(src="/img/prestataire.png" alt="Illustration des prestataire")
@@ -103,7 +103,7 @@ html
 
               p.divider-quad(class="color-3")
               .space
-              button.color-1(onclick="window.location ='/prestataire'") Accédez à la marketplace
+              button.color-1(onclick="visite('marketplace1', '/prestataire')") Accédez à la marketplace
 
           .card
             .card-content
@@ -112,7 +112,7 @@ html
 
               p.divider-quad(class="color-3")
               .space
-              button.color-1(onclick="window.location ='/donneur-dordre'") Accédez à la marketplace
+              button.color-1(onclick="visite('marketplace2', '/donneur-dordre')") Accédez à la marketplace
 
           .card
             .card-content
@@ -121,7 +121,7 @@ html
 
               p.divider-quad(class="color-3")
               .space
-              button.color-1(onclick="window.location ='/donneur-dordre'") Accédez à la marketplace
+              button.color-1(onclick="visite('marketplace3','/donneur-dordre')") Accédez à la marketplace
 
       footer#contact
         h2 Pour plus d’information, n’hésitez pas à nous contacter

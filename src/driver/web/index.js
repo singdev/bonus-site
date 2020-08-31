@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser');
 
 const webapp = require('./app');
+const api = require('./api');
 
 module.exports = () => {
     const app = express();
@@ -10,6 +11,7 @@ module.exports = () => {
     app.use(bodyParser.urlencoded({ extended: true}));
     
     webapp(app);
+    api(app);
 
     const PORT = process.env.PORT || 3000;
 
