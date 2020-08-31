@@ -8,14 +8,15 @@ async function registerPrestataire() {
     const prenom = document.querySelector('input[name="prenom"]').value;
     const entreprise = document.querySelector('input[name="entreprise"]').value;
     const email = document.querySelector('input[name="email"]').value;
+    const type = "prestataire";
 
-    const res = await fetch('/prestataire', {
+    const res = await fetch('/api/user', {
         method: 'post',
         headers: {
             'content-type': 'application/json'
         },
         body: JSON.stringify({
-            nom, prenom, entreprise, email
+            nom, prenom, entreprise, email, type
         })
     });
 
@@ -39,14 +40,15 @@ async function registerDonneurDOrdre() {
     const prenom = document.querySelector('input[name="prenom"]').value;
     const entreprise = document.querySelector('input[name="entreprise"]').value;
     const email = document.querySelector('input[name="email"]').value;
+    const type = "donneur-dordre";
 
-    const res = await fetch('/donneur-dordre', {
+    const res = await fetch('/api/user', {
         method: 'post',
         headers: {
             'content-type': 'application/json'
         },
         body: JSON.stringify({
-            nom, prenom, entreprise, email
+            nom, prenom, entreprise, email, type
         })
     });
 
