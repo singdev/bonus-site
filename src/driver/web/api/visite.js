@@ -4,9 +4,11 @@ const VisiteRepo = require('../../../adapter/storage/repository/VisiteMongoRepo'
 const CreateVisite = require('../../../application/use_case/CreateVisite');
 const GetAllVisite = require('../../../application/use_case/GetAllVisite');
 
+const adminAuthController = require('../../../adapter/controller/adminAuthController');
+
 const visiteRepo = new VisiteRepo();
 
-router.get("/", async (req, res, next) => {
+router.get("/",  adminAuthController.verifyAccessToken, async (req, res, next) => {
     const r = await GetAllVisite(visiteRepo);
     if(r){
         res.send(r);

@@ -4,9 +4,11 @@ const UserRepo = require('../../../adapter/storage/repository/UserMongoRepo');
 const CreateUser = require('../../../application/use_case/CreateUser');
 const GetAllUser = require('../../../application/use_case/GetAllVisite');
 
+const adminAuthController = require('../../../adapter/controller/adminAuthController');
+
 const userRepo = new UserRepo();
 
-router.get("/", async (req, res, next) => {
+router.get("/", adminAuthController.verifyAccessToken, async (req, res, next) => {
     const r = await GetAllUser(userRepo);
     if(r){
         res.send(r);
