@@ -1,4 +1,8 @@
 
+window.addEventListener('load', () => {
+    visite('index', null);
+});
+
 document.querySelector('.menu-button').addEventListener('click', (e) => {
     const drawer =  document.querySelector('.drawer');
     drawer.classList.toggle('show-drawer');
@@ -23,5 +27,7 @@ function visite(action, next){
         })
     });
 
-    window.location = next;
+    if(next != null){
+        window.location = next;
+    }
 }
