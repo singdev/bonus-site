@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous")
+    link(rel="stylesheet" href="/css/style.css")
+    link(rel="stylesheet" href="/css/register.css")
+
+
+  body
+    header
+      img(src="/img/bonus.png" alt="Logo de Bonus" class="logo")
+
+    main
+
+      h1 Vous êtes interêssé par le rôle de donneur d'ordre sur BONUS ? Inscrivez dès maintenant
+      
+      p.feedback
+
+      .form
+        .nom-prenom
+          .form-group
+            input(type="text" id="nom" name="nom")
+            label(for="nom") Nom
+
+          .form-group
+            input(type="text" id="prenom" name="prenom")
+            label(for="prenom") Prénom
+
+        .form-group
+          input(type="text" id="entreprise" name="entreprise")
+          label(for="entreprise") Nom de votre entreprise 
+
+        .form-group
+          input(type="email" id="email" name="email")
+          label(for="nom") Adresse email
+
+        button(onclick="registerDonneurDOrdre()") S'enregistrer
+    
+    script(src="/js/register.js")
