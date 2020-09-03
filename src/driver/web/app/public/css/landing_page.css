@@ -238,9 +238,9 @@ footer h2 {
     color: white;
 }
 
-.col-2 {
+.col-3 {
     display: grid;
-    grid-template-columns: 30% 30%;
+    grid-template-columns: 30% 30% 30%;
     padding: 20px;
     padding-top: 40px;
     justify-content: center;
@@ -297,4 +297,13 @@ footer h3 {
     padding: 20px;
     font-size: 14px;
     color: #777777;
+}
+
+.logo-bonus img {
+    width: 80%;
+    height: auto;
+}
+
+.logo-bonus {
+    padding-top: 40px;
 }
