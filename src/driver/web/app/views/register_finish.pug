@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous")
+    link(rel="stylesheet" href="/css/style.css")
+    link(rel="stylesheet" href="/css/register.css")
+    title BONUS - Inscription des donneurs d'ordre
+
+  body
+    header
+      img(src="/img/bonus.png" alt="Logo de Bonus" class="logo")
+
+    main
+
+      p(style="padding: 20px; text-align: center;")  Félicitation, vous faites parties des premières personnes à avoir rejoind BONUS, n'oubliez pas de partager le lien sur les réseaux sociaux
+
+      div(class="fb-share-button" data-href="https://www.gobonus.ga" data-layout="button_count" data-size="large")
+        a(target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.gobonus.ga%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore") Partager
+
+      div(id="fb-root")
+    
+    script(async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v8.0" nonce="uenRU8HB")

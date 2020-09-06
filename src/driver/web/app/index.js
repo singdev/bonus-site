@@ -11,6 +11,10 @@ module.exports = (app) => {
   app.use('/prestataire', prestataire);
   app.use('/donneur-dordre', donneur_dordre);
 
+  app.get("/partage", (req, res) => {
+    res.render('register_finish');
+  })
+
   app.set('view engine', 'pug');
   app.set('views', __dirname + '/views');
 }

@@ -68,6 +68,48 @@ button {
     padding: 20px;
 }
 
+.socials {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    padding: 16px;
+}
+
+.social i {
+    font-size: 30px;
+}
+
+.social p {
+    padding-left: 20px;
+    color: white;
+    font-size: 14px;
+}
+
+.social:hover p {
+    color: #777777;
+}
+
+.link {
+    margin-top: 40px;
+    border: 1px solid #00758D;
+    font-family: monospace;
+    padding: 16px 64px;
+    border-radius: 10px;
+}
+
+.link a {
+    font-family: monospace;
+}
+
 @media screen and (max-width: 800px) {
     .form {
         width: 80%;

@@ -21,9 +21,7 @@ async function registerPrestataire() {
     });
 
     if (res.status == 200) {
-        console.log("success");
-        feedback.innerHTML = "Félicitation, vous faites parties des premières personnes à avoir rejoind BONUS, n'oubliez pas de partager le lien sur les réseaux sociaux <br> <strong>www.gobonus.ga</strong> "
-        feedback.style.color = "#8E0B56";
+        window.location = "/partage";
     } else {
         feedback.innerHTML = "Une erreur c'est produite";
         feedback.style.color = "red";
@@ -31,7 +29,6 @@ async function registerPrestataire() {
 }
 
 async function registerDonneurDOrdre() {
-    console.log("AAAA");
     const feedback = document.querySelector('.feedback');
     feedback.innerHTML = "Veuillez patienter";
     feedback.style.color = "black";
@@ -54,10 +51,7 @@ async function registerDonneurDOrdre() {
 
 
     if (res.status == 200) {
-        console.log("success");
-        feedback.innerHTML = "Félicitation, vous faites parties des premières personnes à avoir rejoind BONUS, n'oubliez pas de partager le lien sur les réseaux sociaux <br> <strong>www.gobonus.ga</strong> "
-        feedback.style.color = "#8E0B56";
-
+        window.location = "/partage";
     } else {
         feedback.innerHTML = "Une erreur c'est produite";
         feedback.style.color = "red";
