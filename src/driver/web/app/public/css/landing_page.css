@@ -23,6 +23,15 @@ header {
     width: 100vw;
 }
 
+.actions {
+    display: flex;
+    flex-direction: row;
+}
+
+.dropdown {
+    padding-right: 0.5rem;
+}
+
 .menu {
     display: none;
 }

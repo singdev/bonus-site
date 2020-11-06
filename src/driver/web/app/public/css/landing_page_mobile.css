@@ -1,8 +1,13 @@
 @media screen and (max-width: 900px) {
     .logo {
         width: 100px;
+        position: absolute;
     }
 
+    header {
+        height: 6vh;
+    }
+    
     header .drawer {
         display: flex;
         flex-direction: column;

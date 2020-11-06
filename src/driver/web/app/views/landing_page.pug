@@ -8,10 +8,11 @@ html
     link(href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet")
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous")
     link(rel="stylesheet" href="/css/style.css")
+    link(rel="stylesheet" href="/css/dropdown.css")
     link(rel="stylesheet" href="/css/landing_page.css")
     link(rel="stylesheet" href="/css/landing_page_mobile.css")
     title Bienvenue sur BONUS - La Bourse de Sous-traitance Numérique du Gabon
-    
+
   body
     main
       header
@@ -25,8 +26,19 @@ html
             a(href="#contact") Contact
 
           .actions
-            button.plain-round-btn(onclick="visite('inscription','#users')" style="width: 150px;") S'inscrire
-            button.outline-round-btn(onclick="visite('connexion', '#users')" style="width: 150px;") Se connecter
+            .dropdown
+              button.plain-round-btn(onclick="visite('inscription','#users')" style="width: 150px;") S'inscrire
+              .menu-wrapper 
+                .dropdown-menu
+                  button.dropdown-menu-button(onclick="visite('prestataire', '/prestataire')") Prestataire
+                  button.dropdown-menu-button(onclick="visite('donneur-dordre', '/donneur-dordre')") Donneur d'ordre
+
+            .dropdown    
+              button.outline-round-btn(onclick="visite('connexion', '#users')" style="width: 150px;") Se connecter
+              .menu-wrapper
+                .dropdown-menu
+                  button.dropdown-menu-button(onclick="visite('prestataire', '/prestataire')") Prestataire
+                  button.dropdown-menu-button(onclick="visite('donneur-dordre', '/donneur-dordre')") Donneur d'ordre
         .menu
           button.menu-button
             span &times;
