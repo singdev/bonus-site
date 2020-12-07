@@ -2,11 +2,13 @@ version: "2"
 services:
     bonussite-app:
         build: .
+        restart: always
         ports:
             - "3041:8080"
         links:
             - bonussite
     bonussite:
         image: mongo
+        restart: always
         volumes:
             - ./data:/data/db
