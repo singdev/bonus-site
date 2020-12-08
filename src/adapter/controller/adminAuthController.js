@@ -3,6 +3,7 @@ const GetToken = require('../../application/use_case/GenerateAccessToken');
 const JWTAccessToken = require('../security/JWTAccessToken');
 const Crypto = require('../security/Bcrypt');
 const GetTokenData = require('../../application/use_case/GetTokenData');
+const CreateUser = require('../../application/use_case/CreateUser');
 
 const UserRepo = require('../../adapter/storage/repository/AdminMongoRepo');
 
@@ -47,6 +48,24 @@ module.exports = {
         } catch (error) {
             console.log(error);
             res.sendStatus(401);
+        }
+    },
+
+    async createRoot() {
+        try {
+            const root = {
+                identifiant: "sing02",
+                password: "pivot402020"
+            };          
+            const userRepository = new UserRepo();
+            const crypto = new Crypto();
+            
+            const r = await CreateUser(root, userRepository, crypto);
+            if(r){
+                console.log("Root is created")
+            } else console.log("Root is not created");
+        } catch(err){
+            
         }
     }
 }

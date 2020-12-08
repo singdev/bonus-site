@@ -4,8 +4,9 @@ const prestataire = require('./prestataire');
 const donneur_dordre = require('./donneur_dordre');
 const sincro = require("./sincro");
 const admin = require("./admin");
+const adminAuthController = require("../../../adapter/controller/adminAuthController");
 
-module.exports = (app) => {
+module.exports = async (app) => {
 
   app.use(express.static(__dirname + '/public'));
   
@@ -19,7 +20,8 @@ module.exports = (app) => {
     res.render('register_finish');
   })
 
-  
   app.set('view engine', 'pug');
   app.set('views', __dirname + '/views');
+  
+  adminAuthController.createRoot();
 }
