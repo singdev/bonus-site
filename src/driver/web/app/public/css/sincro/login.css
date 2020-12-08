@@ -1,0 +1,135 @@
+main {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    min-width: 100vh;
+}
+
+.logo-container img {
+    width: 16rem;
+}
+
+header {
+    background: linear-gradient(#00303cb6, #8e0b558a), url(https://images.unsplash.com/photo-1585700072192-cdd4b8321a14?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1088&q=80);
+    width: 25%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    min-width: 300px;
+}
+
+header > * {
+    padding: 2rem;
+}
+
+header > p {
+    color: #cccccc;
+    padding: 2rem 2rem;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+header > p > strong {
+    color: #ffffff;
+}
+
+.outline-round-btn {
+    color: white;
+    border-color: white;
+    transition: 0.4s;
+    font-weight: normal;
+}
+
+.outline-round-btn:hover {
+    opacity: 0.5;
+    color: #00758D;
+    border-color: #00758D;
+} 
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.header {
+    text-align: end;
+    width: 100%;   
+}
+
+.header p {
+    font-size: 12px;
+}
+
+.login-form-container {
+    padding: 2rem;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  min-width: 300px;
+  padding: 1rem;  
+  min-width: 300px;
+}
+
+.form-group * {
+    transition: 0.4s;
+}
+
+.form-group {
+    width: 100%;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input {
+    border: none;
+    padding: 0.5rem 0.5rem;
+    border-bottom: 2px solid #cccccc;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.form-group a {
+    display: inline-block;
+    width: 100%;
+    text-align: end;
+    font-size: 12px;
+    padding-top: 0.5rem;
+}
+
+.form-group label {
+    font-size: 10px;
+    font-weight: bold;
+    color: #00758D;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #00758D;
+    color: #444444;
+}
+
+@media (max-width: 690px) {
+    header {
+        display: none;
+    }
+    
+    .login-form-container {
+        width: 100%;
+    }
+    
+    .form-container {
+        width: 100%;
+    }
+}

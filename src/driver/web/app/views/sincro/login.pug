@@ -1,1 +1,45 @@
-h1 Login sur Sincro
+doctype html
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(name="description" content="La bourse de sous-traitance numérique (BONUS) est une plateforme digitale d’intermediation et de qualification de prestataire et de fournisseurs de biens/services au Gabon.")
+
+        link(href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous")
+        link(rel="stylesheet" href="/css/style.css")
+        link(rel="stylesheet" href="/css/sincro/login.css")
+        title Connexion - La Bourse de Sous-traitance Numérique du Gabon
+
+    body
+
+        main
+            header
+                .logo-container
+                    img(src="/img/bonus_b.png" alt="Logo bonus")
+
+                p
+                    strong GÉREZ VOS PROCESSUS, DÉVELOPPEZ VOTRE RÉSEAU ET INTÉGREZ L'ENTREPRISE ÉTENDUE!
+
+                p La bourse de sous-traitance numérique (BONUS) est une plateforme d’intermediation et de qualification de prestataire et de fournisseurs de biens/services au niveau local.
+                a.outline-round-btn(href="/") En savoir plus
+            section.login-form-container
+                .header
+                    p Vous n'avez pas encore de compte ?
+                        a(href="#") Inscrivez vous
+
+                .form-container
+                    .form-group
+                      .logo-container
+                        img(src="/img/bonus.png" alt="Logo bonus")
+                    .form-group
+                        label(for="email") Identifiant
+                        input(type="text" name="email" placeholder="Adresse e-mail")
+
+                    .form-group
+                        label(for="password") Mot de passe
+                        input(type="text" name="password" placeholder="Mot de passe")
+                        a.small(href="#") Mot de passe oublié ?
+
+                    .form-group
+                        button Se connecter
