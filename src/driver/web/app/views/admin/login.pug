@@ -1,0 +1,17 @@
+extends core/header.pug
+
+block content
+  link(rel="stylesheet", href="/css/admin/login.css")
+  
+  form(action="/admin/login" method="post" class="create-code")
+    h2 Admin
+    .form-group
+      label Identifiant
+      input(type="text" name="email" placeholder="Identifiant")
+      
+    .form-group
+      label Identifiant
+      input(type="password" name="password" placeholder="Mot de passe")
+
+    .form-group
+      button Se connecter 
