@@ -1,8 +1,21 @@
 extends core/header.pug
 
 block content
-  link(rel="stylesheet", href="/css/admin/users.css")
-  
-  h1 Utilisateurs
-  
+  link(rel="stylesheet" href="/css/admin/users.css")
+
+  h1.title Utilisateurs
+
+  div(class="table-container" style="overflow-x:auto;")
+    table
+      thead
+        tr
+          th Nom
+          th Prenom
+          th Email
+          th Role
+          th Date
+          th Action
+      tbody(id='content')          
+
+
   script(src="/js/admin/users.js")

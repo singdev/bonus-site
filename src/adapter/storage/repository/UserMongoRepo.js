@@ -8,6 +8,10 @@ module.exports = class extends UserRepos {
         const u = new Model(user);
         return await u.save();
     }
+    
+    async update(id, user){
+        return await Model.findOneAndUpdate({ _id: id }, user, { new: true });
+    }
 
     async findAll(){
         return await Model.find({});

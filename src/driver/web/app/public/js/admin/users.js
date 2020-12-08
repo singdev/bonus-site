@@ -13,6 +13,62 @@ window.addEventListener('load', async () => {
 
 function displayUsers(users){
     console.log(users);
+    
+    const container = document.querySelector("#content");
+    
+    for(let i = 0; i < users.length; i++){
+        const tr = document.createElement("tr");
+        const nom = document.createElement("td");
+        nom.innerHTML = users[i].nom;
+        const prenom = document.createElement("td");
+        prenom.innerHTML = users[i].prenom;        
+        const email = document.createElement("td");
+        email.innerHTML = users[i].email;        
+        const type = document.createElement("td");
+        type.innerHTML = users[i].type;
+        const date = document.createElement("td");
+        date.innerHTML = users[i].date;  
+        
+        const action = document.createElement("td");        
+        const button = document.createElement('a');
+        action.appendChild(button);  
+        button.href = "#";
+        button.innerHTML = "Changer de status";
+        button.addEventListener("click", async () => {
+           await updateUser(users[i]._id, { isRegister: !users[i].isRegister}); 
+        });
+        
+        tr.appendChild(nom);
+        tr.appendChild(prenom);
+        tr.appendChild(email);
+        tr.appendChild(type);
+        tr.appendChild(date);
+        tr.appendChild(action);
+        if(users[i].isRegister == false){
+            tr.classList.add("not-register");
+        }
+        
+        container.appendChild(tr);
+    }
+}
+
+async function updateUser(userId, data){
+    const token = await loginToAPI();
+    const res = await fetch("/api/user/update/" + userId, {
+        method: 'post',
+        headers: {
+            'content-type': 'application/json',
+            'authorization': "Bearer " + token
+        },
+        body: JSON.stringify(data)
+    });
+    if(res.status == 200){
+        const users = await res.json();
+        window.location.reload();
+        return users;
+    } else {
+        return null;
+    }
 }
 
 async function loginToAPI(){

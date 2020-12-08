@@ -7,5 +7,6 @@ module.exports = mongoose.model('User', mongoose.Schema({
     email: { type: String },
     entreprise: { type: String },
     date: { type: Date, default: Date.now() },
-    type: { type: String, enum: ['prestataire', 'donneur-dordre'] }
+    type: { type: String, enum: ['prestataire', 'donneur-dordre'] },
+    isRegister: { type: Boolean, default: false }
 }));

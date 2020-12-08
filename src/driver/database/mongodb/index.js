@@ -7,6 +7,7 @@ module.exports = () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true,
+            useFindAndModify: false
         });
 
     mongoose.connection.on('error', () => console.log("MongoDB Error !"));

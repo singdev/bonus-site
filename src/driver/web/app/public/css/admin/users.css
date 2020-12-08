@@ -1,0 +1,51 @@
+* {
+    transition: 0.4s;
+}
+
+.title {
+    margin-top: 6rem;
+}
+
+body {
+    padding: 1rem;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+  
+th, td {
+    text-align: left;
+    padding: 1rem;
+}
+  
+tr {
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #cccccc;
+}
+
+thead > tr {
+    background-color: #00758D;
+    color: white;
+}
+
+.table-container {
+    padding: 1rem;
+}
+
+.not-register {
+    background-color: tomato;
+}
+
+tr a {
+    font-size: 12px;
+    color: #D1B400;
+    font-weight: bold;
+}
+
+.not-register * {
+    color: white;
+}
