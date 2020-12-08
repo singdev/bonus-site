@@ -3,12 +3,7 @@ function login(){
     const password = document.querySelector("#password").value;
     
     SincroAuth.basicAuth(email, password, (response) => {
-        if(response.valide){
-            window.location = response.url;
-        } else {
-            alert("Identifiants invalident !");
-        }
-        console.log("success");
+        window.location = response.url;
     }, (err) => {
         alert(err.errorMessage);
     });
