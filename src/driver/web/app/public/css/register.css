@@ -3,10 +3,33 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Oxygen', sans-serif;
+    transition: 0.4s;
 }
 
 header {
-    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #fafafa;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.outline {
+    text-decoration: none;
+    border: 2px solid #00758D;
+    padding: 0.5rem 2rem;
+    color: #00758D;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.outline:hover {
+    border-color: #D1B400;
+    color: #D1B400;
 }
 
 main {
@@ -14,21 +37,67 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 8rem;
+    padding-bottom: 2rem;
 }
 
 h1 {
     text-align: center;
     width: 80%;
-    font-weight: lighter;
-    padding-top: 20px;
+    font-weight: bold;
+    padding: 0.5rem;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+h2 {
+    padding: 2rem 0rem;
+    margin: 1rem 0rem;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    color: #444444;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 2px solid #cccccc;
+    background: linear-gradient(#ffffff, #fafafa8c);
+}
+
+h2 span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    margin-right: 0.5rem;
+}
+
+h2 em {
+    font-style: normal;
     font-size: 18px;
 }
 
-input {
-    padding: 8px 8px;
-    border: 2px solid #00758D;
+.form-group input, textarea {
+    padding: 0.5rem 1rem;
+    border: 1px solid #00758D;
     border-radius: 5px;
     width: 100%;
+    margin-top: 0.5rem;
+}
+
+textarea {
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #D1B400;
+    color: #D1B400;
+    outline: none;
 }
 
 .form-group {
@@ -39,10 +108,31 @@ input {
     padding-bottom: 16px;
 }
 
-label {
+.form-group-checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.form-group-checkbox label {
+    padding: 0.5rem;
+}
+
+p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.form-group label {
     font-size: 14px;
     font-weight: bold;
     color: #00758D;
+}
+
+input:focus~label {
+    color: #D1B400;
 }
 
 .nom-prenom {
@@ -56,8 +146,9 @@ button {
 }
 
 .form {
-    margin-top: 80px;
-    width: 60%;
+    padding: 1rem;
+    width: 900px;
+    max-width: 100%;
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -110,8 +201,36 @@ button {
     font-family: monospace;
 }
 
-@media screen and (max-width: 800px) {
-    .form {
-        width: 80%;
-    }
+label a {
+    font-weight: bold;
+    color: #00758D;
+}
+
+button {
+    margin-top: 2rem;
+}
+
+input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
+footer p {
+    color: #777777;
+    font-size: 14px;
+}
+
+footer {
+    margin-top: 6rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid #cccccc;
+}
+
+.logo-gray {
+    width: 8rem;
 }

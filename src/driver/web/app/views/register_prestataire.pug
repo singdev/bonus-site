@@ -12,14 +12,20 @@ html
   body
     header
       img(src="/img/bonus.png" alt="Logo de Bonus" class="logo")
+      a.outline(href="/#users") En savoir plus
 
     main
 
-      h1 Vous êtes interéssé par le rôle de prestataire sur BONUS ? Inscrivez vous dès maintenant
-      
+      h1 Demande d'inscription en tant que prestataire
+
       p.feedback
 
       .form
+
+        h2
+          span 1
+          em Identification
+
         .nom-prenom
           .form-group
             input(type="text" id="nom" name="nom")
@@ -38,6 +44,47 @@ html
           input(type="email" id="email" name="email")
           label(for="nom") Adresse email
 
-        button(onclick="registerPrestataire()") S'enregistrer
+
+        h2
+          span 2
+          em Qualification 
+
+        .form-group
+          input(type="file" id="fiche_circuit" name="fiche_circuit")
+          label(for="fiche_circuit") 
+            span Fiche circuit (Facultatif)
+            span.filename
+
+        .form-group
+          input(type="file" id="cv" name="cv")
+          label(for="cv") CV
+
+        .form-group
+          textarea#reference(name="references" cols="30" rows="10")
+          label(for="nom")
+            span Quelques références
+
+        h2
+          span 3
+          em Enregistrement 
+
+        p.legal En cliquant sur envoyer la demande vous reconnaissez avoir pris connaissance et accepté les termes des documents suivants:
+        
+        .form-group-checkbox
+          input#politique(type="checkbox" name="politique")
+          label
+           a(href="#", target="_blank", rel="noopener noreferrer") Politique de confidentialité
+          
+        .form-group-checkbox
+          input#condition(type="checkbox" name="condition")
+          label 
+            a(href="#", target="_blank", rel="noopener noreferrer") Condition d'utilisation
+
+        button(onclick="registerPrestataire()") Envoyer la demande
+
+      footer
+        p Copyright &copy; 2021
+        img(src="/img/bonus_b.png" alt="Logo de Bonus" class="logo-gray")
+        
 
     script(src="/js/register.js")

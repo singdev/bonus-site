@@ -12,14 +12,20 @@ html
   body
     header
       img(src="/img/bonus.png" alt="Logo de Bonus" class="logo")
+      a.outline(href="/#users") En savoir plus
 
     main
 
-      h1 Vous êtes interéssé par le rôle de donneur d'ordre sur BONUS ? Inscrivez vous dès maintenant
+      h1 Demande d'inscription en tant que donneur d'ordre
       
       p.feedback
 
       .form
+      
+        h2
+          span 1
+          em Identification
+      
         .nom-prenom
           .form-group
             input(type="text" id="nom" name="nom")
@@ -34,9 +40,48 @@ html
           label(for="entreprise") Nom de votre entreprise 
 
         .form-group
+          input(type="text" id="adresse" name="adresse")
+          label(for="adresse") Adresse du siège
+          
+        .form-group
+          input(type="tel" id="telephone" name="telephone")
+          label(for="telephone") Numéro de téléphone 
+
+        .form-group
           input(type="email" id="email" name="email")
           label(for="nom") Adresse email
 
-        button(onclick="registerDonneurDOrdre()") S'enregistrer
+        h2
+          span 2
+          em Qualification 
+
+        .form-group
+          input(type="file" id="fiche_circuit" name="fiche_circuit")
+          label(for="fiche_circuit") 
+            span Fiche circuit (Facultatif)
+            span.filename
+
+        h2
+          span 3
+          em Enregistrement 
+
+        p.legal En cliquant sur envoyer la demande vous reconnaissez avoir pris connaissance et accepté les termes des documents suivants:
+        
+        .form-group-checkbox
+          input#politique(type="checkbox" name="politique")
+          label
+           a(href="#", target="_blank", rel="noopener noreferrer") Politique de confidentialité
+          
+        .form-group-checkbox
+          input#condition(type="checkbox" name="condition")
+          label 
+            a(href="#", target="_blank", rel="noopener noreferrer") Condition d'utilisation
+
+        button(onclick="registerDonneurDOrdre()") Envoyer la demande
+    
+      
+      footer
+        p Copyright &copy; 2021
+        img(src="/img/bonus_b.png" alt="Logo de Bonus" class="logo-gray")
     
     script(src="/js/register.js")
