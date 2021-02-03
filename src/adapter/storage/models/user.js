@@ -8,5 +8,12 @@ module.exports = mongoose.model('User', mongoose.Schema({
     entreprise: { type: String },
     date: { type: Date, default: Date.now() },
     type: { type: String, enum: ['prestataire', 'donneur-dordre'] },
-    isRegister: { type: Boolean, default: false }
+    isRegister: { type: Boolean, default: false },
+    
+    cvURL: { type: String },
+    ficheCircuitURL: { type: String },
+    reference: { type: String },
+    
+    adresse: { type: String },
+    telephone: { type: String }
 }));

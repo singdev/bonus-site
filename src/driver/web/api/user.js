@@ -1,5 +1,7 @@
 const router = require('express').Router();
 
+const multer = require("multer");
+
 const UserRepo = require('../../../adapter/storage/repository/UserMongoRepo');
 const CreateUser = require('../../../application/use_case/CreateUser');
 const UpdateUser = require('../../../application/use_case/UpdateUser.js');
@@ -10,6 +12,17 @@ const email = require("../../../../my_module/email_nho");
 const adminAuthController = require('../../../adapter/controller/adminAuthController');
 
 const userRepo = new UserRepo();
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, '/tmp/uploads')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now())
+    }
+});
+  
+const upload = multer({ storage: storage })
 
 function emailForUser(user){
     return `
@@ -77,8 +90,18 @@ router.get("/", adminAuthController.verifyAccessToken, async (req, res, next) =>
     }
 });
 
-router.post("/", async (req, res, next) => {
-    const r = await CreateUser(req.body, userRepo);
+router.post("/", upload.fields([
+    { name: 'cv', maxCount: 1 },
+    { name: 'fiche_circuit', maxCount: 1 },
+  ]), async (req, res, next) => {
+    const userData = req.body;
+    if(req.files['cv']){
+        userData.cvURL = "/uploads/" + req.files['cv'][0].filename;
+    }
+    if(req.files['fiche_circuit']){
+        userData.ficheCircuitURL = "/uploads/" + req.files['fiche_circuit'][0].filename;
+    }
+    const r = await CreateUser(userData, userRepo);
     if(r){
         if(req.body.type == "prestataire") {
             try {
