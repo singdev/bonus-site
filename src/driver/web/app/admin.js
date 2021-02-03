@@ -4,6 +4,14 @@ const userMemory = require("../../database/memory/users");
 
 const adminController = require("../../../adapter/controller/adminController");
 
+router.get("/", auth.verfiySessionToken, (req, res, next) => {
+    if(req.auth){
+        res.redirect("/admin/utilisateurs");
+    } else {
+        res.redirect("/admin/login");
+    }
+});
+
 router.get('/utilisateurs',  auth.verfiySessionToken, (req, res, next) => {
     if(req.auth){
         adminController.usersPage(req, res,next);

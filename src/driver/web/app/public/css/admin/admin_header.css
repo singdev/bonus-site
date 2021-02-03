@@ -1,36 +1,17 @@
 header {
-    padding: 1.1rem;
-    box-shadow: 1px 4px 20px #cccccc;
-    width: 100vw;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: white;
-    z-index: 10000;
+    width: 100vw;
+    padding: 2rem;
+    background-color: #fafafa;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    z-index: 99999999999;
 }
 
 header img {
-    width: 100px;
-    margin-right: 2rem;
-}
-
-header nav {
-    display: flex;
-    flex-direction: row;
-}
-
-header nav a {
-    color: #777777;
-    display: inline-block;
-    padding-right: 1rem;
-    text-decoration: none;
-    transition: 0.4s;
-    font-size: 14px;
-}
-
-header nav a:hover {
-    color: #444444;
+    width: 6rem;
 }

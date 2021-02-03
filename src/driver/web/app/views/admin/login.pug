@@ -1,17 +1,32 @@
-extends core/header.pug
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap" rel="stylesheet")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous")
+    link(rel="stylesheet" href="/css/style.css")
+    link(rel="stylesheet" href="/css/admin/admin_header.css")
+    link(rel="stylesheet" href="/css/admin/login.css")
+    title=title
 
-block content
-  link(rel="stylesheet", href="/css/admin/login.css")
-  
-  form(action="/admin/login" method="post" class="create-code")
-    h2 Admin
-    .form-group
-      label Identifiant
-      input(type="text" name="email" placeholder="Identifiant")
+  body
+
+    form(action="/admin/login" method="post" class="create-code")
       
-    .form-group
-      label Identifiant
-      input(type="password" name="password" placeholder="Mot de passe")
+      h2 Administration de BONUS
+      img(src="/img/bonus_b.png", alt="B")
+      
+      .form-group
+        label Identifiant
+        input(type="text" name="email" placeholder="Identifiant")
 
-    .form-group
-      button Se connecter 
+      .form-group
+        label Mot de passe
+        input(type="password" name="password" placeholder="Mot de passe")
+
+      .form-group
+        button Se connecter 
+        
+    footer
+      p Copyright &copy; 2021, SING SA tous droit reserves 

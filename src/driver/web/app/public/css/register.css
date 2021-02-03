@@ -17,16 +17,6 @@ header {
     width: 100%;
 }
 
-.outline {
-    text-decoration: none;
-    border: 2px solid #00758D;
-    padding: 0.5rem 2rem;
-    color: #00758D;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
 .outline:hover {
     border-color: #D1B400;
     color: #D1B400;

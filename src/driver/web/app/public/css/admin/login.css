@@ -1,3 +1,9 @@
+img {
+    width: 200px;
+    margin: 1rem;
+    margin-bottom: 2rem;
+}
+
 form {
     margin-top: 6rem;
     width: 100%;
@@ -10,7 +16,7 @@ form {
 .form-group {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 1.5rem;
     width: 800px;
     max-width: 95%;
 }
@@ -19,4 +25,22 @@ form {
     border: 1px solid #cccccc;
     padding: 0.5rem;
     border-radius: 5px;
+}
+
+.form-group label {
+    font-size: 14px;
+    padding-bottom: 0.5rem;
+}
+
+footer {
+    border-top: 1px solid #cccccc;
+    margin: 1rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    padding: 2rem;
+    text-align: center;
+    font-size: 12px;
+    color: #777777;
 }
