@@ -10,19 +10,13 @@ function onloadFicheCircuit(e){
 }
 
 async function registerPrestataire() {
-    /*const feedback = document.querySelector('.feedback');
-    feedback.innerHTML = "Veuillez patienter";
-    feedback.style.color = "black";*/
-
     showModal("loader");
-    
     const nom = document.querySelector('input[name="nom"]').value;
     const prenom = document.querySelector('input[name="prenom"]').value;
     const entreprise = document.querySelector('input[name="entreprise"]').value;
     const email = document.querySelector('input[name="email"]').value;
     const reference = document.querySelector('textarea[name="reference"]').value;
     const type = "prestataire";
-
     const formData = new FormData();
     formData.append("nom", nom);
     formData.append("prenom", prenom);
@@ -32,29 +26,15 @@ async function registerPrestataire() {
     formData.append("type", type);
     formData.append("cv", cv);
     formData.append("fiche_circuit", fiche_circuit);
-    
-    const res = await fetch('/api/user', {
-        method: 'post',
-        body: formData
-    });
-    
-    hideModal('loader');
-
-    if (res.status == 200) {
-        window.location = "/partage";
+    if(nom == '' || prenom == '' || email == ''){
+        alert("Les informations suivantes sont obligatoires:\n- Nom\n- Prenom\n- Email");
     } else {
-        feedback.innerHTML = "Une erreur c'est produite, si le probleme persiste veuillez le signaler a contact@gobonus.ga, Merci";
-        feedback.style.color = "red";
+        await validate(formData);
     }
 }
 
-async function registerDonneurDOrdre() {
-    /*const feedback = document.querySelector('.feedback');
-    feedback.innerHTML = "Veuillez patienter";
-    feedback.style.color = "black";*/
-
+async function registerDonneurDOrdre() {  
     showModal("loader");
-    
     const nom = document.querySelector('input[name="nom"]').value;
     const prenom = document.querySelector('input[name="prenom"]').value;
     const entreprise = document.querySelector('input[name="entreprise"]').value;
@@ -62,7 +42,6 @@ async function registerDonneurDOrdre() {
     const type = "donneur-dordre";
     const adresse = document.querySelector('input[name="adresse"]').value;
     const telephone = document.querySelector('input[name="telephone"]').value;
-
     const formData = new FormData();
     formData.append("nom", nom);
     formData.append("prenom", prenom);
@@ -72,18 +51,38 @@ async function registerDonneurDOrdre() {
     formData.append("adresse", adresse);
     formData.append("fiche_circuit", fiche_circuit);
     formData.append("telephone", telephone);
-    
+    if(nom == '' || prenom == '' || email == ''){
+        alert("Les informations suivantes sont obligatoires:\n- Nom\n- Prenom\n- Email");
+    } else {
+        await validate(formData);
+    }
+}
+
+async function validate(formData){
+    if(verifyChecked()){
+        await register(formData);
+    } else {
+        alert("Vous n'avez pas confirmé la lecture d'un des documents\n- Politique de confidentialité\n- Conditions d'utilisation");
+    }
+}
+
+async function register(formData){
     const res = await fetch('/api/user', {
         method: 'post',
         body: formData
     });
-
     hideModal("loader");
-    
     if (res.status == 200) {
         window.location = "/partage";
     } else {
-        feedback.innerHTML = "Une erreur c'est produite, si le probleme persiste veuillez le signaler a contact@gobonus.ga, Merci";
-        feedback.style.color = "red";
+        const message = "Une erreur c'est produite,\n si le probleme persiste veuillez le signaler a contact@gobonus.ga, Merci";
+        alert(message);
     }
+}
+
+function verifyChecked(){
+    const politique = document.getElementById("politique");
+    const condition = document.getElementById("condition");
+    
+    return politique.checked && condition.checked;
 }

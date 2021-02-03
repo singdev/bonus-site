@@ -7,6 +7,7 @@ html
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous")
     link(rel="stylesheet" href="/css/style.css")
     link(rel="stylesheet" href="/css/register.css")
+    link(rel="stylesheet" href="/css/finish.css")
     title BONUS - Inscription des donneurs d'ordre
 
   body
@@ -15,11 +16,19 @@ html
 
     main
 
-      p(style="padding: 20px; text-align: center;")  Félicitation, vous faites parties des premières personnes à avoir rejoind BONUS, n'oubliez pas de partager le lien sur les réseaux sociaux
+      .main-wrapper
+        
+        i(class="far fa-thumbs-up")
+      
+        p  Félicitation, vous faites parties des premières personnes à avoir rejoind BONUS. Vous recevrez par email les instructions pour la suite, n'oubliez pas de partager le lien sur les réseaux sociaux.
 
-      div(class="fb-share-button" data-href="https://www.gobonus.ga" data-layout="button_count" data-size="large")
-        a(target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.gobonus.ga%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore") Partager
+        div(class="fb-share-button" data-href="https://www.gobonus.ga" data-layout="button_count" data-size="large")
+          a(target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.gobonus.ga%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore") Partager
 
-      div(id="fb-root")
-    
+        div(id="fb-root")
+
+    footer
+      p Copyright &copy; 2021
+      img(src="/img/bonus_b.png" alt="Logo de Bonus" class="logo-gray")
+
     script(async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v8.0" nonce="uenRU8HB")

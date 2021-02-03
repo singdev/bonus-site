@@ -27,7 +27,7 @@
   }
   
   .modal {
-    display: flex;
+    display: none;
     flex-direction: column;
     position: fixed;
     top: 0;

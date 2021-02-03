@@ -1,0 +1,48 @@
+footer {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-wrapper {
+    width: 900px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-wrapper p {
+    padding: 2rem;
+    text-align: center;
+}
+
+.main-wrapper i {
+    font-size: 10em;
+    color: #00758D;
+    opacity: 0.5;
+    animation: hello 2s;
+    transition: 0.4s;
+    position: relative;
+}
+
+@keyframes hello {
+    
+    from {
+        left: 200px;
+        transform: scale(0.1);
+    }
+    
+    to {
+        left: 0px;
+        transform: scale(1);
+    }
+}
