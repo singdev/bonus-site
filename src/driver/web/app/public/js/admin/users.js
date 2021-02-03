@@ -13,13 +13,12 @@ window.addEventListener('load', async () => {
 
 function displayUsers(users) {
     const container = document.querySelector("#content");
-
+    console.log(users);
     for (let i = 0; i < users.length; i++) {
         const tr = document.createElement("tr");
         const nom = document.createElement("td");
         nom.innerHTML = users[i].nom;
         nom.classList.add('dropdown');
-        
         
         const prenom = document.createElement("td");
         prenom.innerHTML = users[i].prenom;
@@ -27,13 +26,32 @@ function displayUsers(users) {
         email.innerHTML = users[i].email;
         
         const statu = document.createElement("td");
-        let str = users[i].cvURL ? '<span>CV</span>' : '<span class="no">CV</span>';
+        let str = users[i].cvURL ? '<span><a href='+ users[i].cvURL +'>CV</a></span>' : '<span class="no">CV</span>';
         if(users[i].ficheCircuitURL){
-            str += '<span>FC</span>';
+            str += '<span title="Fiche circuit"><a href='+ users[i].ficheCircuitURL +'>FC</a></span>';
         } else {
-            str += '<span class="no">FC</span>';
+            str += '<span title="Fiche circuit" class="no">FC</span>';
         }
-        console.log(users[i].reference);
+        if(users[i].failliteURL){
+            str += '<span title="Attestation de non faillite"><a href='+ users[i].failliteURL +'>AF</a></span>';
+        } else {
+            str += '<span title="Attestation de non faillite" class="no">AF</span>';
+        }
+        if(users[i].cnssURL){
+            str += '<span title="Attestation CNSS"><a href='+ users[i].cnssURL +'>AC</a></span>';
+        } else {
+            str += '<span title="Attestation CNSS" class="no">AC</span>';
+        }
+        if(users[i].impositionURL){
+            str += '<span title="Attestion d\'imposition"><a href='+ users[i].impositionURL +'>AI</a></span>';
+        } else {
+            str += '<span title="Attestion d\'imposition" class="no">AI</span>';
+        }
+        if(users[i].compteCertifieURL){
+            str += '<span title="3 années de compte certifié"><a href='+ users[i].compteCertifieURL +'>3C</a></span>';
+        } else {
+            str += '<span title="3 années de compte certifié" class="no">3C</span>';
+        }
         if(users[i].reference != '' && users[i].reference != undefined){
             str += '<span>RE</span>';
         } else {

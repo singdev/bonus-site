@@ -1,5 +1,8 @@
 * {
     transition: 0.4s;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 main {
@@ -71,7 +74,7 @@ td {
 td span {
     border: 1px solid #00758D;
     color: #00758D;
-    margin: 0.5rem;
+    margin: 4px;
 }
 
 footer {
@@ -87,6 +90,13 @@ footer p {
     color: #777777;
 }
 
-span.no {
+tr span.no {
     opacity: 0.3;
+}
+
+tr span a {
+    text-decoration: none;
+    color: #00758D;
+    padding: 0;
+    margin: 0;
 }

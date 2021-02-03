@@ -2,6 +2,8 @@ const router = require('express').Router();
 
 const multer = require("multer");
 
+const path = require('path');
+
 const UserRepo = require('../../../adapter/storage/repository/UserMongoRepo');
 const CreateUser = require('../../../application/use_case/CreateUser');
 const UpdateUser = require('../../../application/use_case/UpdateUser.js');
@@ -18,7 +20,7 @@ const storage = multer.diskStorage({
       cb(null, '/tmp/uploads')
     },
     filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now())
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
 });
   
@@ -106,7 +108,7 @@ router.post("/", upload.fields([
         userData.ficheCircuitURL = "/uploads/" + req.files['fiche_circuit'][0].filename;
     }
     if(req.files['faillite']){
-        userData.faillteURL = "/uploads/" + req.files['faillite'][0].filename;
+        userData.failliteURL = "/uploads/" + req.files['faillite'][0].filename;
     }
     if(req.files['cnss']){
         userData.cnssURL = "/uploads/" + req.files['cnss'][0].filename;
@@ -115,7 +117,7 @@ router.post("/", upload.fields([
         userData.impositionURL = "/uploads/" + req.files['imposition'][0].filename;
     }
     if(req.files['compte_certifie']){
-        userData.compteCertifie = "/uploads/" + req.files['compte_certifie'][0].filename;
+        userData.compteCertifieURL = "/uploads/" + req.files['compte_certifie'][0].filename;
     }
     console.log(userData);
     const r = await CreateUser(userData, userRepo);
