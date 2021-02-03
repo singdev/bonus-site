@@ -56,7 +56,7 @@ html
           em Qualification 
 
         .form-group
-          input(type="file" id="fiche_circuit" name="fiche_circuit")
+          input(type="file" id="fiche_circuit" onchange="onloadFicheCircuit(this)" name="fiche_circuit")
           label(for="fiche_circuit") 
             span Fiche circuit (Facultatif)
             span.filename

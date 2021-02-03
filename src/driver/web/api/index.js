@@ -12,3 +12,4 @@ module.exports = (app) => {
         res.download("/tmp/uploads/" + req.params.filename);
     });
 }
+

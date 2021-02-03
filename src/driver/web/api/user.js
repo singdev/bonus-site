@@ -101,6 +101,7 @@ router.post("/", upload.fields([
     if(req.files['fiche_circuit']){
         userData.ficheCircuitURL = "/uploads/" + req.files['fiche_circuit'][0].filename;
     }
+    console.log(userData);
     const r = await CreateUser(userData, userRepo);
     if(r){
         if(req.body.type == "prestataire") {
