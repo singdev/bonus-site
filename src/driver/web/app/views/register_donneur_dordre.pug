@@ -7,9 +7,14 @@ html
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous")
     link(rel="stylesheet" href="/css/style.css")
     link(rel="stylesheet" href="/css/register.css")
+    link(rel="stylesheet", href="/css/modal.css")
+    link(rel="stylesheet" href="/css/loader.css")
     title BONUS - Inscription des donneurs d'ordre
 
   body
+    
+    include includes/loading_modal.pug
+  
     header
       img(src="/img/bonus.png" alt="Logo de Bonus" class="logo")
       a.outline(href="/#users") En savoir plus
@@ -84,4 +89,5 @@ html
         p Copyright &copy; 2021
         img(src="/img/bonus_b.png" alt="Logo de Bonus" class="logo-gray")
     
+    script(src="/js/script.js")
     script(src="/js/register.js")

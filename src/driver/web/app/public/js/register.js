@@ -10,15 +10,17 @@ function onloadFicheCircuit(e){
 }
 
 async function registerPrestataire() {
-    const feedback = document.querySelector('.feedback');
+    /*const feedback = document.querySelector('.feedback');
     feedback.innerHTML = "Veuillez patienter";
-    feedback.style.color = "black";
+    feedback.style.color = "black";*/
 
+    showModal("loader");
+    
     const nom = document.querySelector('input[name="nom"]').value;
     const prenom = document.querySelector('input[name="prenom"]').value;
     const entreprise = document.querySelector('input[name="entreprise"]').value;
     const email = document.querySelector('input[name="email"]').value;
-    const reference = document.querySelector('input[name="reference"]').value;
+    const reference = document.querySelector('textarea[name="reference"]').value;
     const type = "prestataire";
 
     const formData = new FormData();
@@ -35,20 +37,24 @@ async function registerPrestataire() {
         method: 'post',
         body: formData
     });
+    
+    hideModal('loader');
 
     if (res.status == 200) {
         window.location = "/partage";
     } else {
-        feedback.innerHTML = "Une erreur c'est produite";
+        feedback.innerHTML = "Une erreur c'est produite, si le probleme persiste veuillez le signaler a contact@gobonus.ga, Merci";
         feedback.style.color = "red";
     }
 }
 
 async function registerDonneurDOrdre() {
-    const feedback = document.querySelector('.feedback');
+    /*const feedback = document.querySelector('.feedback');
     feedback.innerHTML = "Veuillez patienter";
-    feedback.style.color = "black";
+    feedback.style.color = "black";*/
 
+    showModal("loader");
+    
     const nom = document.querySelector('input[name="nom"]').value;
     const prenom = document.querySelector('input[name="prenom"]').value;
     const entreprise = document.querySelector('input[name="entreprise"]').value;
@@ -72,11 +78,12 @@ async function registerDonneurDOrdre() {
         body: formData
     });
 
-
+    hideModal("loader");
+    
     if (res.status == 200) {
         window.location = "/partage";
     } else {
-        feedback.innerHTML = "Une erreur c'est produite";
+        feedback.innerHTML = "Une erreur c'est produite, si le probleme persiste veuillez le signaler a contact@gobonus.ga, Merci";
         feedback.style.color = "red";
     }
 }

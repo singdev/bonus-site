@@ -10,6 +10,9 @@ html
     title BONUS - Inscription des prestataires
 
   body
+  
+    include includes/loading_modal.pug
+  
     header
       img(src="/img/bonus.png" alt="Logo de Bonus" class="logo")
       a.outline(href="/#users") En savoir plus
@@ -60,7 +63,7 @@ html
           label(for="cv") CV
 
         .form-group
-          textarea#reference(name="references" cols="30" rows="10")
+          textarea#reference(name="reference" cols="30" rows="10")
           label(for="nom")
             span Quelques références
 
@@ -86,5 +89,5 @@ html
         p Copyright &copy; 2021
         img(src="/img/bonus_b.png" alt="Logo de Bonus" class="logo-gray")
         
-
+    script(src="/js/script.js")
     script(src="/js/register.js")
