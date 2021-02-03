@@ -14,6 +14,11 @@ module.exports = mongoose.model('User', mongoose.Schema({
     ficheCircuitURL: { type: String },
     reference: { type: String },
     
+    failliteURL: { type: String },
+    cnssURL: { type: String },
+    compteCertifieURL: { type: String },
+    impositionURL: { type: String },
+    
     adresse: { type: String },
     telephone: { type: String }
 }));

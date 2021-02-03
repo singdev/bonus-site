@@ -1,5 +1,9 @@
 let cv = null;
 let fiche_circuit = null;
+let cnss = null;
+let faillite = null;
+let compte_certifie = null;
+let imposition = null;
 
 function onloadCV(e){
     cv = e.files[0];
@@ -7,6 +11,22 @@ function onloadCV(e){
 
 function onloadFicheCircuit(e){
     fiche_circuit = e.files[0];
+}
+
+function onloadNonFaillite(e){
+    faillite = e.files[0];
+}
+
+function onloadCNSS(e){
+    cnss = e.files[0];
+}
+
+function onloadImposition(e){
+    imposition = e.files[0];
+}
+
+function onloadCompteCertifie(e){
+    compte_certifie = e.files[0];
 }
 
 async function registerPrestataire() {
@@ -26,6 +46,12 @@ async function registerPrestataire() {
     formData.append("type", type);
     formData.append("cv", cv);
     formData.append("fiche_circuit", fiche_circuit);
+    formData.append("faillite", faillite);
+    formData.append("cnss", cnss);
+    formData.append("imposition", imposition);
+    formData.append("compte_certifie", compte_certifie);
+    
+    
     if(nom == '' || prenom == '' || email == ''){
         alert("Les informations suivantes sont obligatoires:\n- Nom\n- Prenom\n- Email");
     } else {

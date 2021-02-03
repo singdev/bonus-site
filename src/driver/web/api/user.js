@@ -93,6 +93,10 @@ router.get("/", adminAuthController.verifyAccessToken, async (req, res, next) =>
 router.post("/", upload.fields([
     { name: 'cv', maxCount: 1 },
     { name: 'fiche_circuit', maxCount: 1 },
+    { name: 'faillite', maxCount: 1 },
+    { name: 'cnss', maxCount: 1 },
+    { name: 'imposition', maxCount: 1 },
+    { name: 'compte_certifie', maxCount: 1 },
   ]), async (req, res, next) => {
     const userData = req.body;
     if(req.files['cv']){
@@ -100,6 +104,18 @@ router.post("/", upload.fields([
     }
     if(req.files['fiche_circuit']){
         userData.ficheCircuitURL = "/uploads/" + req.files['fiche_circuit'][0].filename;
+    }
+    if(req.files['faillite']){
+        userData.faillteURL = "/uploads/" + req.files['faillite'][0].filename;
+    }
+    if(req.files['cnss']){
+        userData.cnssURL = "/uploads/" + req.files['cnss'][0].filename;
+    }
+    if(req.files['imposition']){
+        userData.impositionURL = "/uploads/" + req.files['imposition'][0].filename;
+    }
+    if(req.files['compte_certifie']){
+        userData.compteCertifie = "/uploads/" + req.files['compte_certifie'][0].filename;
     }
     console.log(userData);
     const r = await CreateUser(userData, userRepo);
