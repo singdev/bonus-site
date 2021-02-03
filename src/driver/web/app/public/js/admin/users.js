@@ -17,8 +17,12 @@ function displayUsers(users) {
     for (let i = 0; i < users.length; i++) {
         const tr = document.createElement("tr");
         const nom = document.createElement("td");
-        nom.innerHTML = users[i].nom;
-        nom.classList.add('dropdown');
+        const n = users[i].nom ? users[i].nom : '';
+        const entreprise = users[i].entreprise ? users[i].entreprise : '';
+        const reference = users[i].reference ? users[i].reference : '';
+        const adresse = users[i].adresse ? users[i].adresse : '';
+        const telephone = users[i].telephone ? users[i].telephone : '';
+        dropdown(nom, n, entreprise, reference, adresse, telephone);
         
         const prenom = document.createElement("td");
         prenom.innerHTML = users[i].prenom;
@@ -87,11 +91,25 @@ function displayUsers(users) {
     }
 }
 
-function dropdown(root) {
+function dropdown(root, nom, entreprise, reference, adresse, telephone) {
     const template = `
         <div class="dropdown">
+          <p>${nom}</p>
+          
+          <div class="menu-wrapper">
+            <div class="dropdown-menu">
+              <ul>
+                <li>${entreprise}</li>
+                <li>${reference}</li>
+                <li>${adresse}</li>
+                <li>${telephone}</li>
+              </ul>
+            </div>
+          </div>
         </div>
-    `
+    `;
+    const element = new DOMParser().parseFromString(template, 'text/html');
+    root.appendChild(element.querySelector('div'));
 }
 
 async function updateUser(userId, data) {

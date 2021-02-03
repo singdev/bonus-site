@@ -100,3 +100,20 @@ tr span a {
     padding: 0;
     margin: 0;
 }
+
+tr ul {
+    list-style-type: none;
+    text-align: start;
+}
+
+tr .dropdown:hover {
+    cursor: pointer;
+}
+
+tr .dropdown:hover p {
+    color: #00758D;
+}
+
+tr .dropdown li {
+    color: #00758D;
+}
