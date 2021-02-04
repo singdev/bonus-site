@@ -116,4 +116,20 @@ tr .dropdown:hover p {
 
 tr .dropdown li {
     color: #00758D;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid #cccccc;
+}
+
+tr .dropdown li em {
+    font-size: 8px;
+    color: #777777;
+    font-weight: bold;
+    font-style: normal;
+}
+
+tr .dropdown li span {
+    border: none;
+    padding: 0;
 }

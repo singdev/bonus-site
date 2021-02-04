@@ -3,17 +3,15 @@ let currentIndex = 0;
 let numberByStep = 10;
 
 window.addEventListener('load', async () => {
-
     const token = await loginToAPI();
     if (token) {
         const users = await fetchUsers(token);
-        displayUsers(users);
+        displayUsers(users.reverse());
     }
 });
 
 function displayUsers(users) {
     const container = document.querySelector("#content");
-    console.log(users);
     for (let i = 0; i < users.length; i++) {
         const tr = document.createElement("tr");
         const nom = document.createElement("td");
@@ -99,10 +97,22 @@ function dropdown(root, nom, entreprise, reference, adresse, telephone) {
           <div class="menu-wrapper">
             <div class="dropdown-menu">
               <ul>
-                <li>${entreprise}</li>
-                <li>${reference}</li>
-                <li>${adresse}</li>
-                <li>${telephone}</li>
+                <li>
+                    <span>${entreprise}</span>
+                    <em>Entreprise</em>
+                </li>
+                <li>
+                    <span>${reference}</span>
+                    <em>Reference</em>
+                </li>
+                <li>
+                    <span>${adresse}</span>
+                    <em>Adresse</em>
+                </li>
+                <li>
+                    <span>${telephone}</span>
+                    <em>Telephone</em>
+                </li>
               </ul>
             </div>
           </div>
@@ -170,6 +180,6 @@ async function fetchUsers(token) {
 function formatDate(date) {
     const d = new Date(date);
     return (d.getDate() < 10 ? '0' : '') + d.getDate()
-        + '/' + (d.getMonth() < 10 ? '0' : '') + d.getMonth()
+        + '/' + ((d.getMonth()+1) < 10 ? '0' : '') + (d.getMonth()+1)
         + '/' + d.getFullYear();
 }
