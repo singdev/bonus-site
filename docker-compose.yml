@@ -7,6 +7,8 @@ services:
             - "3041:8080"
         links:
             - bonussite
+        volumes:
+            - ./uploads:/tmp/uploads        
     bonussite:
         image: mongo
         restart: always
