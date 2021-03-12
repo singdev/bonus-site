@@ -1,35 +1,38 @@
-const nodemailer = require('nodemailer');
-
 class MailSender {
 
 
     constructor(){
-        this.srcEmail = "nho.notification@gmail.com";
-        this.password = "ABClotus";
-        this.init();
     }
 
     init() {
-      this.transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user: this.srcEmail,
-          pass: this.password
-        }
-      });
+
     }
 
     async sendEmail(dstEmail, subject, content, libelle) {
-      const name = libelle || 'NHO';
-      let info = await this.transporter.sendMail({
-        from:  name + ' <' + this.srcEmail + '>',
-        to: dstEmail,
-        subject: subject,
-        html: content
+      var nodemailer = require('nodemailer');
+
+      var transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+              user: 'nho.notification@gmail.com',
+              pass: 'ABClotus'
+          }
       });
   
-      let result = await this.transporter.sendMail(info);
-      return result;
+      var mailOptions = {
+          from: libelle + '<nho.notification@gmail.com>',
+          to: dstEmail,
+          subject: subject,
+          html: content
+      };
+  
+      transporter.sendMail(mailOptions, function (error, info) {
+          if (error) {
+              console.log(error);
+          } else {
+              console.log('Email sent: ' + info.response);
+          }
+      });
     }
   }
 
