@@ -566,20 +566,20 @@ router.post("/", upload.fields([
     if (r) {
         if (req.body.type == "prestataire") {
             try {
-                await email.sendEmail(req.body.email, "Demande d'inscription a BONUS", emailForUser(req.body), "BONUS");
+                email.sendEmail(req.body.email, "Demande d'inscription à BONUS", emailForUser(req.body), "BONUS");
             } catch (err) {
                 console.log(err);
             }
         } else {
             try {
-                await email.sendEmail(req.body.email, "Demande d'inscription a BONUS", emailForDonneur(req.body), "BONUS");
+                email.sendEmail(req.body.email, "Demande d'inscription à BONUS", emailForDonneur(req.body), "BONUS");
             } catch (err) {
                 console.log(err);
             }
         }
 
         try {
-            await email.sendEmail("contact@gobonus.ga", "BONUS Demande d'inscription", emailForBONUS(req.body), "BONUS");
+            email.sendEmail("contact@gobonus.ga", "BONUS Demande d'inscription", emailForBONUS(req.body), "BONUS");
         } catch (err) {
             console.log(err);
         }
