@@ -101,7 +101,7 @@ async function register(formData){
     if (res.status == 200) {
         window.location = "/partage";
     } else {
-        const message = "Une erreur c'est produite,\n si le probleme persiste veuillez le signaler a contact@gobonus.ga, Merci";
+        const message = "Veuillez verifier les informations puis réessayer";
         alert(message);
     }
 }
