@@ -5,6 +5,12 @@ let faillite = null;
 let compte_certifie = null;
 let imposition = null;
 
+let logo = null;
+
+function onloadLogo(e){
+  logo = e.files[0];
+}
+
 function onloadCV(e){
     cv = e.files[0];
 }
@@ -41,6 +47,7 @@ async function registerPrestataire() {
     formData.append("nom", nom);
     formData.append("prenom", prenom);
     formData.append("entreprise", entreprise);
+    formData.append("logo", logo);
     formData.append("email", email);
     formData.append("reference", reference);
     formData.append("type", type);
@@ -72,6 +79,7 @@ async function registerDonneurDOrdre() {
     formData.append("nom", nom);
     formData.append("prenom", prenom);
     formData.append("entreprise", entreprise);
+    formData.append("logo", logo);
     formData.append("email", email);
     formData.append("type", type);
     formData.append("adresse", adresse);

@@ -16,18 +16,18 @@ const adminAuthController = require('../../../adapter/controller/adminAuthContro
 const userRepo = new UserRepo();
 
 const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, '/tmp/uploads')
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
+  destination: function (req, file, cb) {
+    cb(null, '/tmp/uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+  }
 });
 
 const upload = multer({ storage: storage })
 
 function emailForUser(user) {
-    return `
+  return `
     <!doctype html>
     <html>
       <head>
@@ -190,7 +190,7 @@ function emailForUser(user) {
 }
 
 function emailForDonneur(user) {
-    return `
+  return `
     <!doctype html>
 <html>
   <head>
@@ -353,7 +353,7 @@ table[class=body] .article {
 }
 
 function emailForBONUS(user) {
-    return `
+  return `
     <!doctype html>
 <html>
   <head>
@@ -526,76 +526,80 @@ table[class='body'] .article {
 }
 
 router.get("/", adminAuthController.verifyAccessToken, async (req, res, next) => {
-    const r = await GetAllUser(userRepo);
-    if (r) {
-        res.send(r);
-    } else {
-        res.sendStatus(500);
-    }
+  const r = await GetAllUser(userRepo);
+  if (r) {
+    res.send(r);
+  } else {
+    res.sendStatus(500);
+  }
 });
 
 router.post("/", upload.fields([
-    { name: 'cv', maxCount: 1 },
-    { name: 'fiche_circuit', maxCount: 1 },
-    { name: 'faillite', maxCount: 1 },
-    { name: 'cnss', maxCount: 1 },
-    { name: 'imposition', maxCount: 1 },
-    { name: 'compte_certifie', maxCount: 1 },
+  { name: 'cv', maxCount: 1 },
+  { name: 'fiche_circuit', maxCount: 1 },
+  { name: 'faillite', maxCount: 1 },
+  { name: 'cnss', maxCount: 1 },
+  { name: 'imposition', maxCount: 1 },
+  { name: 'compte_certifie', maxCount: 1 },
+  { name: 'logo', maxCount: 1 },
 ]), async (req, res, next) => {
-    const userData = req.body;
-    if (req.files['cv']) {
-        userData.cvURL = "/uploads/" + req.files['cv'][0].filename;
-    }
-    if (req.files['fiche_circuit']) {
-        userData.ficheCircuitURL = "/uploads/" + req.files['fiche_circuit'][0].filename;
-    }
-    if (req.files['faillite']) {
-        userData.failliteURL = "/uploads/" + req.files['faillite'][0].filename;
-    }
-    if (req.files['cnss']) {
-        userData.cnssURL = "/uploads/" + req.files['cnss'][0].filename;
-    }
-    if (req.files['imposition']) {
-        userData.impositionURL = "/uploads/" + req.files['imposition'][0].filename;
-    }
-    if (req.files['compte_certifie']) {
-        userData.compteCertifieURL = "/uploads/" + req.files['compte_certifie'][0].filename;
-    }
-    console.log(userData);
-    const r = await CreateUser(userData, userRepo);
-    if (r) {
-        if (req.body.type == "prestataire") {
-            try {
-                email.sendEmail(req.body.email, "Demande d'inscription à BONUS", emailForUser(req.body), "BONUS");
-            } catch (err) {
-                console.log(err);
-            }
-        } else {
-            try {
-                email.sendEmail(req.body.email, "Demande d'inscription à BONUS", emailForDonneur(req.body), "BONUS");
-            } catch (err) {
-                console.log(err);
-            }
-        }
-
-        try {
-            email.sendEmail("contact@gobonus.ga", "BONUS Demande d'inscription", emailForBONUS(req.body), "BONUS");
-        } catch (err) {
-            console.log(err);
-        }
-        res.sendStatus(200);
+  const userData = req.body;
+  if (req.files['cv']) {
+    userData.cvURL = "/uploads/" + req.files['cv'][0].filename;
+  }
+  if (req.files['logo']) {
+    userData.logoURL = "/uploads/" + req.files['logo'][0].filename;
+  }
+  if (req.files['fiche_circuit']) {
+    userData.ficheCircuitURL = "/uploads/" + req.files['fiche_circuit'][0].filename;
+  }
+  if (req.files['faillite']) {
+    userData.failliteURL = "/uploads/" + req.files['faillite'][0].filename;
+  }
+  if (req.files['cnss']) {
+    userData.cnssURL = "/uploads/" + req.files['cnss'][0].filename;
+  }
+  if (req.files['imposition']) {
+    userData.impositionURL = "/uploads/" + req.files['imposition'][0].filename;
+  }
+  if (req.files['compte_certifie']) {
+    userData.compteCertifieURL = "/uploads/" + req.files['compte_certifie'][0].filename;
+  }
+  console.log(userData);
+  const r = await CreateUser(userData, userRepo);
+  if (r) {
+    if (req.body.type == "prestataire") {
+      try {
+        email.sendEmail(req.body.email, "Demande d'inscription à BONUS", emailForUser(req.body), "BONUS");
+      } catch (err) {
+        console.log(err);
+      }
     } else {
-        res.sendStatus(500);
+      try {
+        email.sendEmail(req.body.email, "Demande d'inscription à BONUS", emailForDonneur(req.body), "BONUS");
+      } catch (err) {
+        console.log(err);
+      }
     }
+
+    try {
+      email.sendEmail("contact@gobonus.ga", "BONUS Demande d'inscription", emailForBONUS(req.body), "BONUS");
+    } catch (err) {
+      console.log(err);
+    }
+    res.sendStatus(200);
+  } else {
+    res.sendStatus(500);
+  }
 });
 
 router.post("/update/:id", adminAuthController.verifyAccessToken, async (req, res, next) => {
-    const r = await UpdateUser(req.params.id, req.body, userRepo);
-    if (r) {
-        res.send(r);
-    } else {
-        res.sendStatus(500);
-    }
+  const r = await UpdateUser(req.params.id, req.body, userRepo);
+  if (r) {
+    res.send(r);
+  } else {
+    res.sendStatus(500);
+  }
 });
 
 module.exports = router;

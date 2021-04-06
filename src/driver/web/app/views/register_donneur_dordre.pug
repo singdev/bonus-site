@@ -44,6 +44,10 @@ html
           label(for="entreprise") Nom de votre entreprise 
 
         .form-group
+          input(type="file" onchange="onloadLogo(this)" id="logo" name="logo")
+          label(for="logo") Logo
+
+        .form-group
           input(type="text" id="adresse" name="adresse")
           label(for="adresse") Adresse du siège
           

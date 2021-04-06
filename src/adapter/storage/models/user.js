@@ -10,6 +10,8 @@ module.exports = mongoose.model('User', mongoose.Schema({
     type: { type: String, enum: ['prestataire', 'donneur-dordre'] },
     isRegister: { type: Boolean, default: false },
     
+    logoURL: { type: String },
+    
     cvURL: { type: String },
     ficheCircuitURL: { type: String },
     reference: { type: String },
