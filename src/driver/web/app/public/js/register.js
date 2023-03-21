@@ -7,36 +7,35 @@ let imposition = null;
 
 let logo = null;
 
-function onloadLogo(e){
-  logo = e.files[0];
+function onloadLogo(e) {
+    logo = e.files[0];
 }
 
-function onloadCV(e){
+function onloadCV(e) {
     cv = e.files[0];
 }
 
-function onloadFicheCircuit(e){
+function onloadFicheCircuit(e) {
     fiche_circuit = e.files[0];
 }
 
-function onloadNonFaillite(e){
+function onloadNonFaillite(e) {
     faillite = e.files[0];
 }
 
-function onloadCNSS(e){
+function onloadCNSS(e) {
     cnss = e.files[0];
 }
 
-function onloadImposition(e){
+function onloadImposition(e) {
     imposition = e.files[0];
 }
 
-function onloadCompteCertifie(e){
+function onloadCompteCertifie(e) {
     compte_certifie = e.files[0];
 }
 
 async function registerPrestataire() {
-    showModal("loader");
     const nom = document.querySelector('input[name="nom"]').value;
     const prenom = document.querySelector('input[name="prenom"]').value;
     const entreprise = document.querySelector('input[name="entreprise"]').value;
@@ -57,17 +56,16 @@ async function registerPrestataire() {
     formData.append("cnss", cnss);
     formData.append("imposition", imposition);
     formData.append("compte_certifie", compte_certifie);
-    
-    
-    if(nom == '' || prenom == '' || email == ''){
+
+
+    if (nom == '' || prenom == '' || email == '') {
         alert("Les informations suivantes sont obligatoires:\n- Nom\n- Prenom\n- Email");
     } else {
         await validate(formData);
     }
 }
 
-async function registerDonneurDOrdre() {  
-    showModal("loader");
+async function registerDonneurDOrdre() {
     const nom = document.querySelector('input[name="nom"]').value;
     const prenom = document.querySelector('input[name="prenom"]').value;
     const entreprise = document.querySelector('input[name="entreprise"]').value;
@@ -85,22 +83,24 @@ async function registerDonneurDOrdre() {
     formData.append("adresse", adresse);
     formData.append("fiche_circuit", fiche_circuit);
     formData.append("telephone", telephone);
-    if(nom == '' || prenom == '' || email == ''){
+    if (nom == '' || prenom == '' || email == '') {
         alert("Les informations suivantes sont obligatoires:\n- Nom\n- Prenom\n- Email");
     } else {
+        showModal("loader");
         await validate(formData);
     }
 }
 
-async function validate(formData){
-    if(verifyChecked()){
+async function validate(formData) {
+    if (verifyChecked()) {
+        showModal("loader");
         await register(formData);
     } else {
         alert("Vous n'avez pas confirmé la lecture d'un des documents\n- Politique de confidentialité\n- Conditions d'utilisation");
     }
 }
 
-async function register(formData){
+async function register(formData) {
     const res = await fetch('/api/user', {
         method: 'post',
         body: formData
@@ -114,9 +114,8 @@ async function register(formData){
     }
 }
 
-function verifyChecked(){
-    const politique = document.getElementById("politique");
+function verifyChecked() {
     const condition = document.getElementById("condition");
-    
-    return politique.checked && condition.checked;
+
+    return condition.checked;
 }

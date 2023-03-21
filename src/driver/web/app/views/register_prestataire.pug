@@ -94,14 +94,9 @@ html
         p.legal En cliquant sur envoyer la demande vous reconnaissez avoir pris connaissance et accepté les termes des documents suivants:
         
         .form-group-checkbox
-          input#politique(type="checkbox" name="politique")
-          label
-           a(href="#", target="_blank", rel="noopener noreferrer") Politique de confidentialité
-          
-        .form-group-checkbox
           input#condition(type="checkbox" name="condition")
           label 
-            a(href="#", target="_blank", rel="noopener noreferrer") Condition d'utilisation
+            a(href="/legal/cgu.pdf", target="_blank", rel="noopener noreferrer") Condition d'utilisation
 
         button(onclick="registerPrestataire()") Envoyer la demande
 
