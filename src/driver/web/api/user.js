@@ -565,7 +565,6 @@ router.post("/", upload.fields([
   if (req.files['compte_certifie']) {
     userData.compteCertifieURL = "/uploads/" + req.files['compte_certifie'][0].filename;
   }
-  console.log(userData);
   const r = await CreateUser(userData, userRepo);
   if (r) {
     if (req.body.type == "prestataire") {

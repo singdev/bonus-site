@@ -1,3 +1,5 @@
+const APP_URL = "http://localhost:1009";
+
 let cv = null;
 let fiche_circuit = null;
 let cnss = null;
@@ -57,7 +59,6 @@ async function registerPrestataire() {
     formData.append("imposition", imposition);
     formData.append("compte_certifie", compte_certifie);
 
-
     if (nom == '' || prenom == '' || email == '') {
         alert("Les informations suivantes sont obligatoires:\n- Nom\n- Prenom\n- Email");
     } else {
@@ -83,6 +84,7 @@ async function registerDonneurDOrdre() {
     formData.append("adresse", adresse);
     formData.append("fiche_circuit", fiche_circuit);
     formData.append("telephone", telephone);
+
     if (nom == '' || prenom == '' || email == '') {
         alert("Les informations suivantes sont obligatoires:\n- Nom\n- Prenom\n- Email");
     } else {
@@ -101,17 +103,26 @@ async function validate(formData) {
 }
 
 async function register(formData) {
-    const res = await fetch('/api/user', {
+    const res = await fetch(APP_URL + '/api/remote', {
         method: 'post',
         body: formData
     });
     hideModal("loader");
     if (res.status == 200) {
+        await notifyRegistery(formData);
         window.location = "/partage";
     } else {
         const message = "Veuillez verifier les informations puis réessayer";
         alert(message);
     }
+}
+
+async function notifyRegistery(formData) {
+    const res = await fetch('/api/user', {
+        method: 'post',
+        body: formData
+    });
+    console.log(res.status);
 }
 
 function verifyChecked() {
