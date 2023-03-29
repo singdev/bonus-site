@@ -1,4 +1,5 @@
-const APP_URL = "http://localhost:1009";
+//const APP_URL = "http://localhost:1009";
+const APP_URL = "https://app.gobonus.ga";
 
 let cv = null;
 let fiche_circuit = null;
